@@ -46,6 +46,7 @@
 #define get_ms    arduino_get_clock_ms
 #define log_i     _MLPrintLog
 #define log_e     _MLPrintLog 
+#define min _min
 static inline int reg_int_cb(struct int_param_s *int_param)
 {
 	
@@ -433,7 +434,7 @@ const struct gyro_reg_s reg = {
 #endif
 };
 const struct hw_s hw = {
-    .addr           = 0x68,
+    .addr           = MPU_DEV_ADDR,
     .max_fifo       = 1024,
     .num_reg        = 118,
     .temp_sens      = 340,
@@ -513,7 +514,7 @@ const struct gyro_reg_s reg = {
 #endif
 };
 const struct hw_s hw = {
-    .addr           = 0x68,
+    .addr           = MPU_DEV_ADDR,
     .max_fifo       = 1024,
     .num_reg        = 128,
     .temp_sens      = 321,
